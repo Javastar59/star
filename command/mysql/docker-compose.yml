@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  mysql:
+    restart: always
+    image: hub.c.163.com/library/mysql:5.5.56
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: caoxing123++.
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+      --max_allowed_packet=128M

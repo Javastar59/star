@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+    reids:
+        restart: always
+        image: nginx
+        container_name: nginx
+        ports:
+            - 80:80
+        volumes:
+            - ./usr/local/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./usr/local/nginx/static:/usr/share/nginx/static

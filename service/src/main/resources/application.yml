@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: start-service-provider
+  main:
+    banner-mode: "off"
+  redis:
+      host: 60.205.182.2
+      password: caoxing123++.
+      lettuce:
+        pool:
+          max-active: 20
+          max-idle: 20
+          min-idle: 5
+  dubbo:
+    application:
+      id: start-service-provider
+      name: start-service-provider
+    protocol:
+      id: dubbo
+      name: dubbo
+      port: 20881
+      status: server
+      serialization: kryo
+    server: true
+    registry: N/A
+#      id: zookeeper
+#      address: zookeeper://60.205.182.2:2181

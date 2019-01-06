@@ -1,6 +1,6 @@
 spring:
   application:
-    name: start-service-provider
+    name: dubbo-spring-boot-star
   main:
     banner-mode: "off"
   redis:
@@ -12,9 +12,6 @@ spring:
           max-idle: 20
           min-idle: 5
   dubbo:
-    application:
-      id: start-service-provider
-      name: start-service-provider
     protocol:
       id: dubbo
       name: dubbo
@@ -23,5 +20,4 @@ spring:
       serialization: kryo
     server: true
     registry: N/A
-#      id: zookeeper
-#      address: zookeeper://60.205.182.2:2181
+

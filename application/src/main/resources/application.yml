@@ -1,3 +1,16 @@
+server:
+  port: 8806
+spring:
+  application:
+    name: dubbo-spring-boot-star
+  main:
+     banner-mode: "off"
+  thymeleaf:
+      cache: false
+      mode: LEGACYHTML5
+      encoding: UTF-8
+      servlet:
+        content-type: text/html
 
 
 

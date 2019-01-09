@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: dubbo-spring-boot-star
-  main:
-     banner-mode: "off"
   thymeleaf:
       cache: false
       mode: LEGACYHTML5

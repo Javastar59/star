@@ -66,16 +66,4 @@ public final class ClazzUtils {
         }
     }
 
-    public static Object getObject(Class<?> aClass) {
-        Object o = null;
-        try {
-            o = aClass.newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return o;
-    }
-
 }

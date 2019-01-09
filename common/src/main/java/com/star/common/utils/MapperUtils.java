@@ -35,7 +35,7 @@ public class MapperUtils {
      * @param <B>
      * @return
      */
-    public static <A, B> BiConsumer<A, B> none() {
+    public static <A, B> BiConsumer<A, B> empty() {
         return (A a, B b) -> {
         };
     }

@@ -19,7 +19,7 @@ public class UserProvider implements UserApi {
 
     @Override
     public String hello() {
-        return "hello word";
+        return "hello word dubbo";
     }
 
 }

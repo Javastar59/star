@@ -3,14 +3,13 @@ package com.star.common.utils;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * json 工具类
  */
-@Slf4j
 public class JsonUtils {
+
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     static {

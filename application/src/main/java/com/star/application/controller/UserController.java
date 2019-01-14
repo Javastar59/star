@@ -17,4 +17,14 @@ public class UserController {
     public String goAdmin() {
         return "admin/home";
     }
+
+    @RequestMapping(value = {"/content"}, method = RequestMethod.GET)
+    public String content() {
+        return "content";
+    }
+
+    @RequestMapping(value = {"/model"}, method = RequestMethod.GET)
+    public String model() {
+        return "model";
+    }
 }

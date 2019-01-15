@@ -23,5 +23,7 @@
 /dist/
 /nbdist/
 /.nb-gradle/
-/.gitattributes
 /common/.rebel.xml.bak
+/application/target/
+/common/target/
+/service/target/

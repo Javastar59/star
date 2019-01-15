@@ -1,6 +1,6 @@
 package com.star.common.domain;
 
-import com.star.common.domain.Base.BaseDomain;
+import com.star.common.domain.base.BaseDomain;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

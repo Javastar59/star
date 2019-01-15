@@ -19,3 +19,6 @@ spring:
     server: true
     registry: N/A
 
+star:
+  prefix:
+    content: content;

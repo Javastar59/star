@@ -80,8 +80,8 @@ public class IDUtils {
      *
      * @return
      */
-    public static Long snowflake() {
-        return getSnowflakeIdWorker().nextId();
+    public static String snowflake() {
+        return String.valueOf(getSnowflakeIdWorker().nextId());
     }
 
     /**

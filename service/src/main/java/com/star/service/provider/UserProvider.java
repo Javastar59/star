@@ -17,9 +17,4 @@ public class UserProvider implements UserApi {
         this.userService = userService;
     }
 
-    @Override
-    public String hello() {
-        return "hello word dubbo";
-    }
-
 }

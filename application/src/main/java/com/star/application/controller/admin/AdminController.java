@@ -17,6 +17,6 @@ public class AdminController {
 
     @RequestMapping(value = "content")
     public String content() {
-        return "admin/content";
+        return "admin/content/content";
     }
 }

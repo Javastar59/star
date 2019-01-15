@@ -1,19 +1,23 @@
 package com.star.application.controller.admin;
 
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.star.common.api.ContentApi;
+import com.star.common.domain.admin.Content;
+import com.star.common.domain.response.ResponseVo;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(value = "/content")
+@RequestMapping(value = "/admin/content")
 public class ContentController {
 
+    @Reference(url = "dubbo://127.0.0.1:20881", version = "1.0.0", lazy = true)
+    private ContentApi contentApi;
+
     @RequestMapping(value = "save", method = RequestMethod.POST)
-    public String save() {
-        return "content";
+    public ResponseVo save(@RequestBody Content content) {
+        return ResponseVo.success(contentApi.save(content));
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.POST)
@@ -31,13 +35,9 @@ public class ContentController {
         return "content";
     }
 
-    @RequestMapping(value = "find", method = RequestMethod.GET)
-    public String findAll() {
-        return "content";
+    @RequestMapping(value = "findAll", method = RequestMethod.GET)
+    public ResponseVo findAll() {
+        return ResponseVo.success(contentApi.findAll());
     }
 
-    @RequestMapping(value = "page/{page}/{size}", method = RequestMethod.GET)
-    public String page(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {
-        return "content";
-    }
 }

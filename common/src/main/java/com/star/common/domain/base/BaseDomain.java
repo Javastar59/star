@@ -1,20 +1,19 @@
-package com.star.common.domain.Base;
+package com.star.common.domain.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class BaseDomain implements Serializable {
 
-    private Long id;
+    private String id;
 
-    private Timestamp createTime;
+    private String createTime;
 
-    private Timestamp updateTime;
+    private String updateTime;
 }

@@ -24,6 +24,4 @@
 /nbdist/
 /.nb-gradle/
 /common/.rebel.xml.bak
-/application/target/
-/common/target/
-/service/target/
+

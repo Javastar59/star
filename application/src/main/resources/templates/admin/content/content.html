@@ -115,10 +115,6 @@
 </div>
 <div th:replace="common/admin/footer :: footer"></div>
 <div th:replace="common/admin/script :: script"></div>
-<script src="/assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-<script src="/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js"
-        type="text/javascript"></script>
-<script src="/assets/pages/scripts/table-datatables-managed.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
 <script src="/assets/global/plugins/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
@@ -126,7 +122,8 @@
 <script src="https://cdn.bootcss.com/vue/2.5.21/vue.min.js"></script>
 <script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.min.js"></script>
 <script>
-    new Vue({
+    Vue.http.options.emulateJSON = true;
+    const vm = new Vue({
         el: '#app',
         data: {
             //首先展示列表
@@ -138,7 +135,7 @@
                 title: '',
                 content: ''
             },
-            list: []
+            list: ''
         },
         methods: {
             add() {
@@ -152,10 +149,11 @@
                 this.description = '文章列表';
             },
             save() {
-                this.$http.post("/admin/content/save", this.blog).then(res => {
+                this.$http.post("/admin/content/save", JSON.stringify(this.blog)).then(res => {
                     console.log(res.body.data)
                     if (res.body.status == 200) {
                         this.blog = {};
+                        this.back();
                         this.findAll();
                     } else {
                         alert("ajax save error");
@@ -167,17 +165,19 @@
                     if (res.body.status == 200) {
                         console.log(res.body.data)
                         this.list = res.body.data;
-                        this.back();
                     } else {
                         alert("ajax findAll error");
                     }
                 })
-            },
-            created() {
-                this.findAll();
             }
+        },
+        mounted: function () {
+            this.findAll();
         }
-    })
+    });
 </script>
+<script src="/assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+<script src="/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+<script src="/assets/pages/scripts/table-datatables-managed.js" type="text/javascript"></script>
 </body>
 </html>

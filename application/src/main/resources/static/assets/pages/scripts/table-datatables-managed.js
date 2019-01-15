@@ -13,7 +13,6 @@ var TableDatatablesManaged = function () {
                     "sortAscending": ": activate to sort column ascending",
                     "sortDescending": ": activate to sort column descending"
                 },
-                "emptyTable": "No data available in table",
                 "info": "当前页: _START_ / _END_ , 总记录数: _TOTAL_ ",
                 "infoEmpty": "没有找到记录",
                 "infoFiltered": "(filtered1 from _MAX_ total records)",

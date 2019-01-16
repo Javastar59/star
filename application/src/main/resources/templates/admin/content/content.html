@@ -155,7 +155,6 @@
             },
             save() {
                 this.$http.post("/admin/content/save", JSON.stringify(this.blog)).then(res => {
-                    console.log(res.body.data)
                     if (res.body.status == 200) {
                         this.blog = {};
                         this.back();

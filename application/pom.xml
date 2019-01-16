@@ -37,6 +37,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.dependencies}</version>
+                <configuration>
+                    <mainClass>com.star.application.StarApplication</mainClass>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>

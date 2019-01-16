@@ -15,7 +15,6 @@ spring:
       name: dubbo
       port: 20881
       status: server
-#      serialization: kryo
     server: true
     registry: N/A
 

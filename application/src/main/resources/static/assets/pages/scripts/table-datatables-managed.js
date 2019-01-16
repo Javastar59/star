@@ -1,8 +1,8 @@
 var TableDatatablesManaged = function () {
 
-    var initTable1 = function () {
+    var initTable1 = function (str) {
 
-        var table = $('#sample_1');
+        var table = $(str);
 
         // begin first table
         table.dataTable({
@@ -55,8 +55,6 @@ var TableDatatablesManaged = function () {
             ] // set first column as a default sort by asc
         });
 
-        var tableWrapper = jQuery('#sample_1_wrapper');
-
         table.find('.group-checkable').change(function () {
             var set = jQuery(this).attr("data-set");
             var checked = jQuery(this).is(":checked");
@@ -79,20 +77,16 @@ var TableDatatablesManaged = function () {
     return {
 
         //main function to initiate the module
-        init: function () {
-            if (!jQuery().dataTable) {
-                return;
-            }
-
-            initTable1();
+        init: function (str) {
+            initTable1(str);
         }
 
     };
 
 }();
 
-if (App.isAngularJsApp() === false) { 
-    jQuery(document).ready(function() {
-        TableDatatablesManaged.init();
-    });
-}
+// if (App.isAngularJsApp() === false) {
+//     jQuery(document).ready(function() {
+//         TableDatatablesManaged.init(str);
+//     });
+// }

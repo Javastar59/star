@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableDubboConfiguration
 public class ServiceApplication {
     public static void main(String[] args) {
+        DubboBannerApplicationListener.setBANNER_MODE(Banner.Mode.OFF);
         SpringApplication.run(ServiceApplication.class, args);
     }
 

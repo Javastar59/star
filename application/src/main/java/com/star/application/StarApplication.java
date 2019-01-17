@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableDubboConfiguration
 public class StarApplication {
     public static void main(String[] args) {
+        DubboBannerApplicationListener.setBANNER_MODE(Banner.Mode.OFF);
         SpringApplication.run(StarApplication.class, args);
     }
 }

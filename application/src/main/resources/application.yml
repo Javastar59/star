@@ -1,10 +1,10 @@
 server:
-  port: 8806
+  port: 8807
 spring:
   application:
     name: dubbo-spring-boot-star
   thymeleaf:
-      cache: false
+      cache: true
       mode: LEGACYHTML5
       encoding: UTF-8
       servlet:
@@ -12,14 +12,5 @@ spring:
   mvc:
     pathmatch:
       use-suffix-pattern: true
-  dubbo:
-    protocol:
-      id: dubbo
-      name: dubbo
-      port: 20881
-      status: server
-    server: true
-    registry: N/A
-
 
 

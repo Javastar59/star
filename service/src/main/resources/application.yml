@@ -9,15 +9,14 @@ spring:
           max-active: 20
           max-idle: 20
           min-idle: 5
-  dubbo:
-    protocol:
-      id: dubbo
-      name: dubbo
-      port: 20881
-      status: server
-    server: true
-    registry: N/A
-
-star:
-  prefix:
-    content: content;
+dubbo:
+  scan:
+    basePackages: com.star.common.api
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 20881
+    status: server
+  registry:
+    id: zookeeper
+    address: zookeeper://60.205.182.2:2181

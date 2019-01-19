@@ -1,7 +1,6 @@
 package com.star.application.controller.admin;
 
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.star.common.api.ContentApi;
 import com.star.common.domain.admin.Content;
 import com.star.common.domain.response.ResponseVo;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/admin/content")
 public class ContentController {
 
-    @Reference(url = "dubbo://127.0.0.1:20881", version = "1.0.0", lazy = true)
     private ContentApi contentApi;
 
     @RequestMapping(value = "save", method = RequestMethod.POST)
